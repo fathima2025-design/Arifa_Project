@@ -71,7 +71,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <div>
               <span className="text-slate-400 text-[10px] block">Capacity / Dim</span>
               <span className="font-semibold text-slate-200">
-                {product.capacity?.formatted || product.dimensions.topOut || "Standard"}
+                {product.dimensions.capacityMl
+                  ? `${product.dimensions.capacityMl} ml`
+                  : product.dimensions.topOut || "Standard"}
               </span>
             </div>
             {product.specs.caseCount && (
