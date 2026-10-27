@@ -4,12 +4,14 @@ import React, { useState, useRef } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface Card3DProps extends React.HTMLAttributes<HTMLDivElement> {
+interface Card3DProps {
   children: React.ReactNode;
   className?: string;
   maxTilt?: number;
   depth?: number;
   glare?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  id?: string;
 }
 
 export const Card3D: React.FC<Card3DProps> = ({
@@ -18,7 +20,8 @@ export const Card3D: React.FC<Card3DProps> = ({
   maxTilt = 12,
   depth = 30,
   glare = true,
-  ...props
+  onClick,
+  id,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -79,7 +82,8 @@ export const Card3D: React.FC<Card3DProps> = ({
         "relative transition-colors duration-300 will-change-transform cursor-pointer",
         className
       )}
-      {...props}
+      onClick={onClick}
+      id={id}
     >
       {/* Glare Sheen Layer */}
       {glare && (
