@@ -4,6 +4,9 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PackagingBackground } from "@/components/layout/PackagingBackground";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { MouseGlowFollower } from "@/components/ui/MouseGlowFollower";
 import { companyData } from "@/data/company";
 
 const manrope = Manrope({
@@ -14,7 +17,7 @@ const manrope = Manrope({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0b0f19",
+  themeColor: "#f8fafc",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -63,11 +66,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-['Manrope'] bg-[#060910] text-slate-100 selection:bg-emerald-500 selection:text-white relative">
+      <body className="min-h-full flex flex-col font-['Manrope'] bg-slate-50 text-slate-900 selection:bg-emerald-500 selection:text-white relative">
         <PackagingBackground />
         <Header />
         <main className="flex-1 w-full relative z-10">{children}</main>
         <Footer />
+        <ScrollToTop />
+        <FloatingWhatsApp />
+        <MouseGlowFollower />
       </body>
     </html>
   );

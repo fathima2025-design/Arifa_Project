@@ -11,29 +11,29 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="py-12 lg:py-20 bg-transparent min-h-screen font-['Manrope'] text-white">
+    <div className="py-12 lg:py-20 bg-transparent min-h-screen font-['Manrope'] text-slate-900">
       <Container size="narrow">
-        <div className="bg-[#0b0f19] p-8 sm:p-12 rounded-3xl border border-white/10 shadow-2xl space-y-8">
+        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 space-y-8">
           <div>
-            <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block mb-2">
+            <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-wider block mb-2">
               Corporate Compliance Notice
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Privacy Policy
             </h1>
-            <p className="text-xs text-slate-400 mt-2">
+            <p className="text-xs text-slate-500 mt-2">
               Effective Date: January 1, 2025 • Last Updated: October 2026
             </p>
           </div>
 
           {/* Legal Review Advisory Notice */}
-          <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="p-4 rounded-xl bg-amber-50 border border-amber-200/80 text-xs text-amber-900 flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div>
-              <strong className="block font-bold text-white">
+              <strong className="block font-bold text-amber-950">
                 Information Subject to Corporate Legal Review:
               </strong>
-              <span className="text-slate-400">
+              <span className="text-amber-800 leading-relaxed block mt-0.5">
                 This privacy statement outlines the general B2B enquiry, quotation,
                 and CRM data handling procedures of Arifa Packing & Packaging LLC.
                 Specific contractual data agreements for international distributors
@@ -42,9 +42,9 @@ export default function PrivacyPolicyPage() {
             </div>
           </div>
 
-          <div className="space-y-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <div className="space-y-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
             <section className="space-y-2">
-              <h2 className="text-base font-bold text-white">
+              <h2 className="text-base font-bold text-slate-900">
                 1. Data Collection & Purpose
               </h2>
               <p>

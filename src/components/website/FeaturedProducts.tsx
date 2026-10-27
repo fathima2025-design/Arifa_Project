@@ -15,25 +15,25 @@ export const FeaturedProducts: React.FC = () => {
   const featured = productsData.filter((p) => p.isFeatured).slice(0, 6);
 
   return (
-    <section className="py-24 relative overflow-hidden font-['Manrope'] border-b border-white/5 bg-transparent text-white">
+    <section className="py-24 relative overflow-hidden font-['Manrope'] border-b border-slate-200/60 bg-transparent text-slate-900">
       <Container size="wide" className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-              Featured Products
+            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">
+              Top Selling Lines
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
-              High-Demand Foodservice Packaging
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1.5">
+              Featured Packaging Catalogue
             </h2>
-            <p className="mt-2 text-sm text-slate-400 max-w-xl">
-              Precision-stamped aluminium food containers, platters, and commercial foils trusted across global catering networks.
+            <p className="mt-1.5 text-xs sm:text-sm text-slate-600 max-w-xl font-normal">
+              Direct factory containers, platters, and foil rolls ready for wholesale dispatch from Ajman, UAE.
             </p>
           </div>
 
           <div>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-emerald-400 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors"
             >
               <span>Explore Complete Catalogue</span>
               <ArrowRight className="w-4 h-4" />

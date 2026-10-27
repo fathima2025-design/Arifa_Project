@@ -35,6 +35,13 @@ export interface CompanyProfile {
     clientLogin: string;
     brochurePdf: string;
   };
+  social: {
+    whatsapp: string;
+    facebook: string;
+    instagram: string;
+    twitter: string;
+    linkedin: string;
+  };
   coreValues: {
     title: string;
     description: string;
@@ -82,7 +89,14 @@ export const companyData: CompanyProfile = {
   },
   portals: {
     clientLogin: "https://shop.sultanhhh.com/login",
-    brochurePdf: "/documents/Arifapack-profile.pdf",
+    brochurePdf: "https://www.arifapack.com/images/Arifapack-profile.pdf",
+  },
+  social: {
+    whatsapp: "https://wa.me/97167477061",
+    facebook: "https://www.facebook.com/arifapack/",
+    instagram: "https://www.instagram.com/arifapack/",
+    twitter: "https://twitter.com/arifapack",
+    linkedin: "https://www.linkedin.com/company/arifa-packing-packaging/",
   },
   coreValues: [
     {

@@ -94,7 +94,7 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
   return (
     <div
       className={cn(
-        "relative w-full rounded-3xl bg-gradient-to-b from-[#0a0e18] via-[#070a12] to-[#04060a] border border-white/10 shadow-2xl overflow-hidden group select-none",
+        "relative w-full rounded-3xl bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] border border-slate-200/90 shadow-xl overflow-hidden group select-none",
         heightClass,
         className
       )}
@@ -103,7 +103,7 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
       <div className="absolute top-4 left-4 right-4 z-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pointer-events-none">
         {/* Model Selection Pills */}
         {allowModelSwitch ? (
-          <div className="pointer-events-auto flex items-center p-1 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-xs">
+          <div className="pointer-events-auto flex items-center p-1 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm text-xs">
             <button
               type="button"
               onClick={() => {
@@ -113,8 +113,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               className={cn(
                 "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer",
                 modelType === "aluminium-container"
-                  ? "bg-emerald-500 text-white shadow-sm"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-emerald-600 text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               <Box className="w-3.5 h-3.5" />
@@ -130,8 +130,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               className={cn(
                 "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer",
                 modelType === "platter"
-                  ? "bg-emerald-500 text-white shadow-sm"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-emerald-600 text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               <Layers className="w-3.5 h-3.5" />
@@ -147,8 +147,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               className={cn(
                 "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer",
                 modelType === "foil-roll"
-                  ? "bg-emerald-500 text-white shadow-sm"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-emerald-600 text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               <Disc className="w-3.5 h-3.5" />
@@ -156,8 +156,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
             </button>
           </div>
         ) : (
-          <div className="pointer-events-auto flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-slate-200">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="pointer-events-auto flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm text-xs font-semibold text-slate-800">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Interactive 3D Motion (Drag to Rotate 360°)</span>
           </div>
         )}
@@ -169,14 +169,14 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               type="button"
               onClick={() => setExploded(!exploded)}
               className={cn(
-                "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl backdrop-blur-md border text-xs font-semibold transition-all cursor-pointer",
+                "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl backdrop-blur-md border text-xs font-semibold transition-all cursor-pointer shadow-sm",
                 exploded
-                  ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50"
-                  : "bg-black/60 text-slate-300 border-white/10 hover:text-white"
+                  ? "bg-emerald-50 text-emerald-700 border-emerald-300"
+                  : "bg-white/90 text-slate-700 border-slate-200 hover:text-slate-950"
               )}
               title="Separate Lid & Inspect Internal Cavity"
             >
-              <UnfoldVertical className="w-3.5 h-3.5 text-emerald-400" />
+              <UnfoldVertical className="w-3.5 h-3.5 text-emerald-600" />
               <span>{exploded ? "Close Lid" : "Separate Lid"}</span>
             </button>
           )}
@@ -185,10 +185,10 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
             type="button"
             onClick={() => setAutoRotate(!autoRotate)}
             className={cn(
-              "p-2 rounded-xl backdrop-blur-md border text-xs font-semibold transition-all cursor-pointer",
+              "p-2 rounded-xl backdrop-blur-md border text-xs font-semibold transition-all cursor-pointer shadow-sm",
               autoRotate
-                ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
-                : "bg-black/60 text-slate-400 border-white/10 hover:text-slate-200"
+                ? "bg-emerald-50 text-emerald-700 border-emerald-300"
+                : "bg-white/90 text-slate-600 border-slate-200 hover:text-slate-950"
             )}
             title="Toggle Continuous 360° Rotation"
           >
@@ -200,8 +200,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
       {/* Bottom Material Finish & Alloy Selector */}
       {allowFinishToggle && (
         <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-          <div className="pointer-events-auto flex items-center gap-1.5 p-1.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 text-xs">
-            <span className="text-[10px] uppercase font-bold text-slate-400 px-2 hidden sm:inline">
+          <div className="pointer-events-auto flex items-center gap-1.5 p-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm text-xs">
+            <span className="text-[10px] uppercase font-bold text-slate-500 px-2 hidden sm:inline">
               Material Finish:
             </span>
             <button
@@ -210,8 +210,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               className={cn(
                 "px-2.5 py-1 rounded-lg font-medium transition-all cursor-pointer",
                 finish === "mirror"
-                  ? "bg-white text-slate-900 shadow-sm font-bold"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-slate-900 text-white shadow-xs font-bold"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               Mirror Polish
@@ -222,8 +222,8 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               className={cn(
                 "px-2.5 py-1 rounded-lg font-medium transition-all cursor-pointer",
                 finish === "matte-aluminium"
-                  ? "bg-slate-200 text-slate-900 shadow-sm font-bold"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-slate-900 text-white shadow-xs font-bold"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               Brushed Satin
@@ -234,17 +234,17 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
               className={cn(
                 "px-2.5 py-1 rounded-lg font-medium transition-all cursor-pointer",
                 finish === "golden-lacquer"
-                  ? "bg-amber-400 text-slate-950 shadow-sm font-bold"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-amber-400 text-slate-950 shadow-xs font-bold"
+                  : "text-slate-600 hover:text-slate-900"
               )}
             >
               Golden Lacquer
             </button>
           </div>
 
-          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-slate-400 px-3 py-1.5 rounded-xl bg-black/60 border border-white/10 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Pure Food-Grade AA8011 Alloy • PBR Shader</span>
+          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-slate-700 px-3 py-1.5 rounded-xl bg-white/90 border border-slate-200 shadow-sm backdrop-blur-sm font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Pure Food-Grade AA8011 Alloy</span>
           </div>
         </div>
       )}

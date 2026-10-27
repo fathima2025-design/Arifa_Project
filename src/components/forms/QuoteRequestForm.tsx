@@ -81,28 +81,28 @@ export const QuoteRequestForm: React.FC<QuoteRequestFormProps> = ({
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-8 px-4 space-y-3 bg-white/[0.02] rounded-2xl border border-white/10">
-        <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+      <div className="text-center py-8 px-4 space-y-3 bg-slate-50 rounded-2xl border border-slate-200">
+        <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-6 h-6" />
         </div>
         <div>
-          <h4 className="text-lg font-bold text-white">
+          <h4 className="text-lg font-bold text-slate-900">
             Quotation Request Received
           </h4>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-600 mt-1">
             Reference:{" "}
-            <span className="font-mono font-bold text-emerald-400">
+            <span className="font-mono font-bold text-emerald-600">
               {referenceCode}
             </span>
           </p>
         </div>
-        <p className="text-xs text-slate-400 max-w-sm mx-auto">
+        <p className="text-xs text-slate-600 max-w-sm mx-auto">
           Our Ajman sales desk will contact you within 24 hours with wholesale rates.
         </p>
         <Button
           variant="secondary"
           size="sm"
-          className="bg-white/10 text-white"
+          className="bg-slate-200 hover:bg-slate-300 text-slate-800"
           onClick={() => {
             setIsSubmitted(false);
             setReferenceCode("");
@@ -115,7 +115,7 @@ export const QuoteRequestForm: React.FC<QuoteRequestFormProps> = ({
   }
 
   const inputClass =
-    "w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-emerald-500 focus:bg-white/[0.06] transition-all";
+    "w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300/80 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-all";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 font-['Manrope']">
@@ -128,7 +128,7 @@ export const QuoteRequestForm: React.FC<QuoteRequestFormProps> = ({
           className={inputClass}
         >
           {productsData.map((p) => (
-            <option key={p.id} value={p.id} className="bg-slate-900 text-white">
+            <option key={p.id} value={p.id} className="bg-white text-slate-900">
               {p.name} ({p.specs.itemCode})
             </option>
           ))}
@@ -192,16 +192,16 @@ export const QuoteRequestForm: React.FC<QuoteRequestFormProps> = ({
             onChange={(e) => setFormData({ ...formData, estimatedMonthlyVolume: e.target.value })}
             className={inputClass}
           >
-            <option value="Sample Pack Testing (< 5,000)" className="bg-slate-900 text-white">
+            <option value="Sample Pack Testing (< 5,000)" className="bg-white text-slate-900">
               Under 5,000 pcs (Sample Evaluation)
             </option>
-            <option value="10,000 – 50,000 units" className="bg-slate-900 text-white">
+            <option value="10,000 – 50,000 units" className="bg-white text-slate-900">
               10,000 – 50,000 pcs (Standard Wholesale)
             </option>
-            <option value="50,000 – 250,000 units (FCL)" className="bg-slate-900 text-white">
+            <option value="50,000 – 250,000 units (FCL)" className="bg-white text-slate-900">
               50,000 – 250,000 pcs (Full Container Load)
             </option>
-            <option value="250,000+ units (Wholesale Contract)" className="bg-slate-900 text-white">
+            <option value="250,000+ units (Wholesale Contract)" className="bg-white text-slate-900">
               250,000+ pcs (Annual Supply Contract)
             </option>
           </select>

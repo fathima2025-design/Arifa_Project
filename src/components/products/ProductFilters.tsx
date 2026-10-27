@@ -37,12 +37,12 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search products..."
-            className="w-full pl-10 pr-9 py-2.5 bg-white/[0.03] border border-white/10 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 focus:bg-white/[0.05] transition-all"
+            className="w-full pl-10 pr-9 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-all"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
             >
               <X className="w-4 h-4" />
             </button>
@@ -56,29 +56,29 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
             className={cn(
               "px-3 py-2 rounded-xl text-xs font-semibold border transition-all cursor-pointer",
               filter3DOnly
-                ? "bg-emerald-500 text-slate-950 font-bold border-emerald-500"
-                : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                ? "bg-emerald-600 text-white font-bold border-emerald-600 shadow-xs"
+                : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200"
             )}
           >
             Interactive 3D Only
           </button>
 
-          <span className="text-xs text-slate-400 hidden sm:inline">
+          <span className="text-xs text-slate-500 font-medium hidden sm:inline">
             {totalResults} Products
           </span>
         </div>
       </div>
 
       {/* Category Navigation Bar */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none pt-2 border-t border-white/10">
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none pt-2 border-t border-slate-200">
         <button
           type="button"
           onClick={() => onCategoryChange("all")}
           className={cn(
             "px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer",
             selectedCategory === "all"
-              ? "bg-emerald-500 text-slate-950 font-bold shadow-xs"
-              : "text-slate-400 hover:text-white hover:bg-white/5"
+              ? "bg-emerald-600 text-white font-bold shadow-xs"
+              : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
           )}
         >
           All Categories
@@ -92,8 +92,8 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
             className={cn(
               "px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer",
               selectedCategory === cat.slug
-                ? "bg-emerald-500 text-slate-950 font-bold shadow-xs"
-                : "text-slate-400 hover:text-white hover:bg-white/5"
+                ? "bg-emerald-600 text-white font-bold shadow-xs"
+                : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
             )}
           >
             {cat.name}

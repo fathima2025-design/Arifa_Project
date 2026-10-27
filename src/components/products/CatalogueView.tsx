@@ -67,19 +67,19 @@ export const CatalogueView: React.FC = () => {
   };
 
   return (
-    <div className="py-16 min-h-screen font-['Manrope'] bg-transparent text-white relative">
+    <div className="py-16 min-h-screen font-['Manrope'] bg-transparent text-slate-900 relative">
       <Container size="wide" className="relative z-10">
         {/* Page Title & Category Header */}
         <div className="mb-10 text-left">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">
             Product Catalogue
           </span>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mt-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mt-2">
             {activeCategoryMeta ? activeCategoryMeta.name : "All Packaging Solutions"}
           </h1>
 
-          <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
+          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
             {activeCategoryMeta
               ? activeCategoryMeta.description
               : "Explore our full range of food containers, platters, hot pots, and commercial foil rolls manufactured in Ajman, UAE."}
@@ -87,7 +87,7 @@ export const CatalogueView: React.FC = () => {
         </div>
 
         {/* Filter Toolbar */}
-        <div className="bg-mesh-card p-5 rounded-2xl border border-white/10 shadow-card-elevated mb-8 backdrop-blur-xl">
+        <div className="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-md shadow-slate-100 mb-8 backdrop-blur-xl">
           <ProductFilters
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}

@@ -1,54 +1,61 @@
+"use client";
+
 import React from "react";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { companyData } from "@/data/company";
+import { Card3D } from "@/components/ui/Card3D";
 
 export const QuotationCTA: React.FC = () => {
   return (
-    <section className="py-24 bg-transparent text-white border-t border-white/5 font-['Manrope']">
+    <section className="py-20 bg-transparent text-slate-900 border-t border-slate-200/60 font-['Manrope']">
       <Container size="wide">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-            Wholesale Procurement
-          </span>
+        <div className="max-w-4xl mx-auto">
+          <Card3D
+            maxTilt={6}
+            depth={20}
+            className="text-center space-y-6 bg-gradient-to-br from-white via-slate-50 to-emerald-50/40 border border-slate-200/90 shadow-2xl shadow-slate-200/50 rounded-3xl p-8 sm:p-14 hover:border-emerald-400/50"
+          >
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-bold uppercase tracking-wider mx-auto">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+              Direct Factory Wholesale
+            </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
-            Upgrade Your Packaging Supply Chain
-          </h2>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-slate-900">
+              Ready to Order Direct from Manufacturer?
+            </h2>
 
-          <p className="text-base text-slate-300 leading-relaxed max-w-xl mx-auto">
-            Get factory-direct pricing on standard container lines or consult our engineering team for custom tool manufacturing in Ajman, UAE.
-          </p>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg mx-auto font-normal">
+              Factory-direct container orders, custom embossed tooling, and fast sample dispatch from Ajman Industrial Area 2, UAE.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="lg"
-              icon={<ArrowRight className="w-4 h-4" />}
-              className="w-full sm:w-auto shadow-lg shadow-emerald-600/20"
-            >
-              Request a Quote
-            </Button>
-            <Button
-              href={`tel:${companyData.contact.packagingTel}`}
-              variant="secondary"
-              size="lg"
-              icon={<Phone className="w-4 h-4 text-emerald-400" />}
-              className="w-full sm:w-auto bg-white/10 hover:bg-white/15 text-white border-white/10"
-            >
-              Call {companyData.contact.packagingTel}
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+              <Button
+                href="/contact"
+                variant="primary"
+                size="lg"
+                icon={<ArrowRight className="w-4 h-4" />}
+                className="w-full sm:w-auto shadow-xl shadow-emerald-600/30 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold"
+              >
+                Request a Wholesale Quote
+              </Button>
+              <a
+                href="tel:+97167477061"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-900 font-bold text-sm border border-slate-300 shadow-sm transition-all hover:scale-105"
+              >
+                <Phone className="w-4 h-4 text-emerald-600" />
+                <span>Call +971 6 747 7061</span>
+              </a>
+            </div>
 
-          <div className="pt-8 text-xs text-slate-400 flex items-center justify-center gap-6">
-            <span>Direct UAE Factory Rates</span>
-            <span>•</span>
-            <span>Worldwide FOB/CIF Sea Freight</span>
-            <span>•</span>
-            <span>ISO 9001:2015 QA</span>
-          </div>
+            <div className="pt-6 text-xs text-slate-500 flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-medium border-t border-slate-100">
+              <span>Direct UAE Factory Rates</span>
+              <span>•</span>
+              <span>Global Sea & Land Freight</span>
+              <span>•</span>
+              <span>100% Recyclable Food Grade</span>
+            </div>
+          </Card3D>
         </div>
       </Container>
     </section>

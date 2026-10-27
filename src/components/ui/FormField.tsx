@@ -24,7 +24,7 @@ export const FormField: React.FC<FormFieldProps> = ({
       {label && (
         <label
           htmlFor={name}
-          className="text-xs font-medium tracking-wide text-slate-300"
+          className="text-xs font-semibold tracking-wide text-slate-700"
         >
           {label}
         </label>

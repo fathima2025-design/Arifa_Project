@@ -55,20 +55,20 @@ export const ContactForm: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-10 px-6 rounded-2xl bg-white/[0.02] border border-white/10 space-y-3">
-        <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+      <div className="text-center py-10 px-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+        <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-6 h-6" />
         </div>
-        <h4 className="text-lg font-bold text-white">
+        <h4 className="text-lg font-bold text-slate-900">
           Message Sent
         </h4>
-        <p className="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">
+        <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
           Thank you for contacting Arifa Pack. Our customer desk in Ajman will respond within 24 hours.
         </p>
         <Button
           variant="secondary"
           size="sm"
-          className="bg-white/10 text-white"
+          className="bg-slate-200 hover:bg-slate-300 text-slate-800"
           onClick={() => {
             setIsSubmitted(false);
             setFormData({
@@ -88,7 +88,7 @@ export const ContactForm: React.FC = () => {
   }
 
   const inputClass =
-    "w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white focus:outline-none focus:border-emerald-500 focus:bg-white/[0.06] transition-all";
+    "w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300/80 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-all";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 font-['Manrope']">
@@ -146,19 +146,19 @@ export const ContactForm: React.FC = () => {
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
           className={inputClass}
         >
-          <option value="Product Enquiries & Bulk Orders" className="bg-slate-900 text-white">
+          <option value="Product Enquiries & Bulk Orders" className="bg-white text-slate-900">
             Product Enquiries & Bulk Orders
           </option>
-          <option value="Distribution & Dealership" className="bg-slate-900 text-white">
+          <option value="Distribution & Dealership" className="bg-white text-slate-900">
             Distribution & Dealership
           </option>
-          <option value="Custom Tooling & OEM Converting" className="bg-slate-900 text-white">
+          <option value="Custom Tooling & OEM Converting" className="bg-white text-slate-900">
             Custom Tooling & OEM Converting
           </option>
-          <option value="Quality Assurance & Plant Audit" className="bg-slate-900 text-white">
+          <option value="Quality Assurance & Plant Audit" className="bg-white text-slate-900">
             Quality Assurance & Plant Audit
           </option>
-          <option value="Other Corporate Matters" className="bg-slate-900 text-white">
+          <option value="Other Corporate Matters" className="bg-white text-slate-900">
             Other Corporate Matters
           </option>
         </select>

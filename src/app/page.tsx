@@ -3,40 +3,24 @@ import { Hero } from "@/components/website/Hero";
 import { CompanyStats } from "@/components/website/CompanyStats";
 import { CategoryShowcase } from "@/components/website/CategoryShowcase";
 import { FeaturedProducts } from "@/components/website/FeaturedProducts";
-import { B2BEstimatorWidget } from "@/components/website/B2BEstimatorWidget";
-import { MaterialComparator } from "@/components/website/MaterialComparator";
-import { CapabilitiesSection } from "@/components/website/CapabilitiesSection";
-import { SustainabilityHighlight } from "@/components/website/SustainabilityHighlight";
 import { QuotationCTA } from "@/components/website/QuotationCTA";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full">
-      {/* 3D Multi-Model Hero Section & Live Ticker */}
+      {/* 1. Hero: Sustainable Packaging Solutions with 3D Interactive Model */}
       <Hero />
 
-      {/* Verified Global Metrics Bar */}
+      {/* 2. Key Manufacturing Stats & Global Heritage */}
       <CompanyStats />
 
-      {/* Product Categories Showcase */}
+      {/* 3. Core 5 Packaging Categories (Gen-Z Bento Grid) */}
       <CategoryShowcase />
 
-      {/* Featured Products with Real Studio Photography */}
+      {/* 4. Top Selling Products Catalogue */}
       <FeaturedProducts />
 
-      {/* Interactive B2B Volume & Freight Estimator Widget */}
-      <B2BEstimatorWidget />
-
-      {/* Interactive Material Comparator Benchmark */}
-      <MaterialComparator />
-
-      {/* Company Capabilities & 780+ Machines Infrastructure */}
-      <CapabilitiesSection />
-
-      {/* Environmental & Infinite Recyclability Benchmark */}
-      <SustainabilityHighlight />
-
-      {/* Global B2B Quotation Callout */}
+      {/* 5. Wholesale RFQ & Factory Direct Contact */}
       <QuotationCTA />
     </div>
   );

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Card3D } from "@/components/ui/Card3D";
 import { Packaging3DCanvas } from "@/components/three/Packaging3DCanvas";
 
 export const Hero: React.FC = () => {
@@ -14,108 +15,126 @@ export const Hero: React.FC = () => {
   >("aluminium-container");
 
   return (
-    <section className="relative w-full overflow-hidden bg-transparent text-white pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <section className="relative w-full overflow-hidden bg-transparent text-slate-900 pt-10 pb-16 lg:pt-16 lg:pb-24">
       <Container size="wide" className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Headline & Two Main CTAs with Motion */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 space-y-8 text-left"
+            className="lg:col-span-6 space-y-6 text-left"
           >
-            {/* Minimal Sub-Badge */}
+            {/* Minimal Sub-Badge (Light Mode) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 shadow-xs"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-xs font-semibold tracking-wider text-emerald-300 uppercase">
-                UAE Manufacturer • Global Distribution
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-bold tracking-wider text-emerald-800 uppercase">
+                Arifa Packing & Packaging LLC • Ajman, UAE
               </span>
             </motion.div>
 
-            {/* Clear, Powerful Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
-              Engineered for Freshness.{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-200">
-                Infinite by Nature.
+            {/* arifapack.com Authentic Headline with Gen-Z Impact */}
+            <div className="space-y-2">
+              <span className="text-xs font-black tracking-widest text-emerald-600 uppercase font-mono">
+                SUSTAINABLE PACKAGING SOLUTIONS
               </span>
-            </h1>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.02] text-slate-900 uppercase">
+                Next-Gen <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-slate-900">
+                  Aluminium
+                </span>{" "}
+                Packaging
+              </h1>
+            </div>
 
-            {/* Crisp Value Proposition */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
-              Premium aluminium food containers, platters, and commercial foils
-              manufactured with automated precision in Ajman, UAE for airlines,
-              food processors, and international hospitality brands.
+            {/* Clean, Authentic 1-Line Proposition */}
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl font-normal">
+              Direct UAE manufacturer of premium food-grade aluminium containers, catering platters, and commercial foils since 1997.
             </p>
 
-            {/* Only Two Main CTAs */}
+            {/* Quick Actions (Pill Buttons with Glow) */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <Button
-                href="/products"
+                href="/contact"
                 variant="primary"
                 size="lg"
                 icon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-lg shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all"
+                className="shadow-xl shadow-emerald-600/30 hover:shadow-emerald-600/50 transition-all font-bold rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white"
               >
-                Explore Products
+                Request Quote
               </Button>
-              <Button
-                href="/contact"
-                variant="secondary"
-                size="lg"
-                className="bg-white/10 hover:bg-white/15 text-white border-white/15 backdrop-blur-md"
+              <a
+                href="https://www.arifapack.com/images/Arifapack-profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-900 font-bold text-sm border border-slate-300 shadow-md hover:shadow-lg transition-all"
               >
-                Request a Quote
-              </Button>
+                Download Brochure (PDF)
+              </a>
             </div>
 
-            {/* Clean Key Metrics */}
-            <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-6">
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            {/* Interactive 3D Key Metrics */}
+            <div className="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-3 sm:gap-4">
+              <Card3D
+                maxTilt={14}
+                depth={15}
+                className="p-3.5 sm:p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all text-center sm:text-left group"
+              >
+                <div className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight group-hover:text-emerald-600 transition-colors">
                   780+
                 </div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">
+                <div className="text-[11px] text-slate-500 mt-1 font-semibold leading-tight">
                   Automated Machines
                 </div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              </Card3D>
+
+              <Card3D
+                maxTilt={14}
+                depth={15}
+                className="p-3.5 sm:p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all text-center sm:text-left group"
+              >
+                <div className="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight group-hover:text-emerald-600 transition-colors">
                   42+
                 </div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">
+                <div className="text-[11px] text-slate-500 mt-1 font-semibold leading-tight">
                   Export Markets
                 </div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 tracking-tight">
+              </Card3D>
+
+              <Card3D
+                maxTilt={14}
+                depth={15}
+                className="p-3.5 sm:p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all text-center sm:text-left group"
+              >
+                <div className="text-xl sm:text-2xl lg:text-3xl font-black text-emerald-600 tracking-tight">
                   100%
                 </div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">
+                <div className="text-[11px] text-slate-500 mt-1 font-semibold leading-tight">
                   Infinitely Recyclable
                 </div>
-              </div>
+              </Card3D>
             </div>
           </motion.div>
 
-          {/* Right Column: 3D Interactive Product Presentation with Motion Entrance */}
+          {/* Right Column: 3D Interactive Product Presentation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 relative"
           >
-            <div className="relative rounded-3xl p-1 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-2xl">
+            <div className="relative rounded-3xl p-1 bg-gradient-to-b from-white via-slate-100/60 to-slate-200/40 shadow-xl border border-slate-200">
               <Packaging3DCanvas
                 modelType={activeModel}
                 initialFinish="mirror"
                 allowFinishToggle={true}
                 allowModelSwitch={true}
-                heightClass="h-[460px] sm:h-[530px]"
+                heightClass="h-[440px] sm:h-[500px]"
               />
             </div>
           </motion.div>

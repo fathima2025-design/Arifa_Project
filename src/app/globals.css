@@ -4,29 +4,29 @@
   :root {
     --font-manrope: "Manrope", system-ui, -apple-system, sans-serif;
 
-    /* Cinematic Dual-Tone Brand Colors */
-    --brand-primary: #10b981;
-    --brand-primary-light: #34d399;
-    --brand-primary-glow: rgba(16, 185, 129, 0.12);
+    /* Crisp Brand Colors (Arifa Eco Green & Trust Blue) */
+    --brand-primary: #1ebd40;
+    --brand-primary-light: #22c55e;
+    --brand-primary-glow: rgba(30, 189, 64, 0.15);
     --brand-accent: #0284c7;
-    --brand-accent-glow: rgba(2, 132, 199, 0.12);
+    --brand-accent-glow: rgba(2, 132, 199, 0.15);
 
-    /* Cinematic Dark Base Canvas */
-    --bg-canvas: #080c14;
-    --bg-surface: #0c111c;
-    --bg-surface-elevated: #111726;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --bg-card-hover: rgba(255, 255, 255, 0.06);
+    /* Clean Bright Light Base Canvas */
+    --bg-canvas: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
 
-    /* Text Tones */
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
+    /* High-Contrast Sharp Text */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
 
-    /* Subtle Border System */
-    --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-highlight: rgba(255, 255, 255, 0.14);
-    --border-brand: rgba(16, 185, 129, 0.3);
+    /* Crisp Border System */
+    --border-subtle: rgba(15, 23, 42, 0.08);
+    --border-highlight: rgba(15, 23, 42, 0.14);
+    --border-brand: rgba(30, 189, 64, 0.4);
   }
 
   * {
@@ -52,19 +52,19 @@
 
 /* ─── Ambient Base Background ─── */
 .bg-mesh-cinematic {
-  background-color: #080c14;
+  background-color: #f8fafc;
 }
 
 .bg-mesh-card {
-  background: rgba(255, 255, 255, 0.025);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .bg-mesh-card:hover {
-  background: rgba(255, 255, 255, 0.045);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border-color: rgba(30, 189, 64, 0.3);
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
 }
 
 /* ─── Glow & Shadows ─── */
