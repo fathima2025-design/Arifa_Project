@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
               <span className="text-xs font-black tracking-widest text-emerald-600 uppercase font-mono">
                 SUSTAINABLE PACKAGING SOLUTIONS
               </span>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.02] text-slate-900 uppercase">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-slate-900 uppercase">
                 Next-Gen <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-slate-900">
                   Aluminium
@@ -134,7 +134,7 @@ export const Hero: React.FC = () => {
                 initialFinish="mirror"
                 allowFinishToggle={true}
                 allowModelSwitch={true}
-                heightClass="h-[440px] sm:h-[500px]"
+                heightClass="h-[360px] sm:h-[420px] lg:h-[450px]"
               />
             </div>
           </motion.div>
