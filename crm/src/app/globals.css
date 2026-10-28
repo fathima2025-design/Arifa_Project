@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-manrope: "Manrope", system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-manrope);
+  }
+
+  body {
+    background-color: #dce7df;
+    color: #1e293b;
+    margin: 0;
+    padding: 0;
+  }
+}
