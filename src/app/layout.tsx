@@ -8,6 +8,7 @@ import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { MouseGlowFollower } from "@/components/ui/MouseGlowFollower";
 import { SplashScreen } from "@/components/ui/SplashScreen";
+import { MobileInteractiveController } from "@/components/ui/MobileInteractiveController";
 import { companyData } from "@/data/company";
 
 const manrope = Manrope({
@@ -102,6 +103,7 @@ export default function RootLayout({
         <ScrollToTop />
         <FloatingWhatsApp />
         <MouseGlowFollower />
+        <MobileInteractiveController />
       </body>
     </html>
   );

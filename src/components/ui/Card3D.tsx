@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -35,6 +35,38 @@ export const Card3D: React.FC<Card3DProps> = ({
   const rotateY = useSpring(useMotionValue(0), springConfig);
   const scale = useSpring(1, springConfig);
 
+  // Mobile Scroll In-View Animation: Gentle metallic glare sweep when card scrolls into view
+  useEffect(() => {
+    if (!cardRef.current || typeof window === "undefined") return;
+    const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    if (!isTouchDevice) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsHovered(true);
+            setGlarePos({ x: 25, y: 25 });
+            rotateX.set(-2);
+            setTimeout(() => {
+              setGlarePos({ x: 75, y: 75 });
+              rotateX.set(2);
+            }, 300);
+            setTimeout(() => {
+              setIsHovered(false);
+              rotateX.set(0);
+              rotateY.set(0);
+            }, 750);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [rotateX, rotateY]);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
@@ -65,12 +97,36 @@ export const Card3D: React.FC<Card3DProps> = ({
     scale.set(1);
   };
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setIsHovered(true);
+    scale.set(0.97);
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const touch = e.touches[0];
+    if (touch) {
+      const touchX = touch.clientX - rect.left;
+      const touchY = touch.clientY - rect.top;
+      setGlarePos({
+        x: (touchX / rect.width) * 100,
+        y: (touchY / rect.height) * 100,
+      });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsHovered(false);
+    scale.set(1);
+  };
+
   return (
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
       style={{
         rotateX,
         rotateY,

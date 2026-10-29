@@ -5,6 +5,7 @@ import React, { useEffect, useState, useRef } from "react";
 export const PackagingBackground: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,8 +17,23 @@ export const PackagingBackground: React.FC = () => {
       setMousePos({ x, y });
     };
 
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -31,7 +47,7 @@ export const PackagingBackground: React.FC = () => {
         className="absolute inset-0 w-full h-full will-change-transform transition-transform duration-700 ease-out"
         style={{
           transform: mounted
-            ? `translate3d(${mousePos.x * 12}px, ${mousePos.y * 10}px, 0)`
+            ? `translate3d(${mousePos.x * 12}px, ${(mousePos.y * 10) + (scrollY * -0.04)}px, 0)`
             : "none",
         }}
       >
@@ -41,7 +57,7 @@ export const PackagingBackground: React.FC = () => {
           style={{
             backgroundImage: "url('/images/backgrounds/arifa_luxury_liquid_metal_bg.png')",
             transform: mounted
-              ? `scale(1.05) translate3d(${mousePos.x * -8}px, ${mousePos.y * -8}px, 0)`
+              ? `scale(1.05) translate3d(${mousePos.x * -8}px, ${(mousePos.y * -8) + (scrollY * 0.03)}px, 0)`
               : "scale(1.05)",
           }}
         />
