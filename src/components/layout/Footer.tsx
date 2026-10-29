@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative z-20 w-full font-['Manrope'] select-none">
+    <footer className="relative z-20 w-full select-none">
       {/* ─── 1. Top Pre-Footer Contact Highlight Bar (Dark Charcoal / Navy) ─── */}
       <section className="bg-[#2f3842] text-white py-12 border-t border-slate-700/60">
         <Container size="wide">

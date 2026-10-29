@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="py-12 lg:py-20 bg-transparent min-h-screen font-['Manrope'] text-slate-900">
+    <div className="py-12 lg:py-20 bg-transparent min-h-screen text-slate-900">
       <Container size="narrow">
         <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 space-y-8">
           <div>

@@ -3,6 +3,9 @@
 @layer base {
   :root {
     --font-manrope: "Manrope", system-ui, -apple-system, sans-serif;
+    --font-bodoni: var(--font-bodoni), "Bodoni Moda", "Playfair Display", Georgia, serif;
+    --font-cinzel: var(--font-cinzel), "Cinzel", Georgia, serif;
+    --font-playfair: var(--font-playfair), "Playfair Display", Georgia, serif;
 
     /* Crisp Brand Colors (Arifa Eco Green & Trust Blue) */
     --brand-primary: #1ebd40;
@@ -35,18 +38,23 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: var(--font-manrope);
+    font-family: var(--font-bodoni), Georgia, serif;
     color: var(--text-primary);
     background-color: var(--bg-canvas);
   }
 
   body {
-    font-family: var(--font-manrope);
+    font-family: var(--font-bodoni), Georgia, serif;
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-bodoni), Georgia, serif;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -107,10 +115,12 @@
     transform: translate(-15%, -15%) rotate(25deg);
     opacity: 0.025;
   }
+
   50% {
     transform: translate(15%, 15%) rotate(25deg);
     opacity: 0.06;
   }
+
   100% {
     transform: translate(-15%, -15%) rotate(25deg);
     opacity: 0.025;
@@ -122,12 +132,15 @@
     transform: translateY(105vh) scale(0.6);
     opacity: 0;
   }
+
   20% {
     opacity: 0.5;
   }
+
   80% {
     opacity: 0.5;
   }
+
   100% {
     transform: translateY(-5vh) scale(1.1);
     opacity: 0;
@@ -135,9 +148,12 @@
 }
 
 @keyframes grid-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.03;
   }
+
   50% {
     opacity: 0.055;
   }
@@ -151,9 +167,11 @@
   0% {
     transform: scale(1.03) translate(0, 0);
   }
+
   50% {
     transform: scale(1.08) translate(-1.5%, -1%);
   }
+
   100% {
     transform: scale(1.03) translate(0, 0);
   }
@@ -168,16 +186,20 @@
   0% {
     stroke-dashoffset: 800;
   }
+
   100% {
     stroke-dashoffset: 0;
   }
 }
 
 @keyframes energy-pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.65;
     filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.7)) drop-shadow(0 0 18px rgba(52, 211, 153, 0.4));
   }
+
   50% {
     opacity: 1;
     filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.95)) drop-shadow(0 0 35px rgba(0, 245, 160, 0.7));
@@ -190,12 +212,15 @@
     top: -5%;
     opacity: 0;
   }
+
   10% {
     opacity: 0.75;
   }
+
   90% {
     opacity: 0.75;
   }
+
   100% {
     top: 105%;
     opacity: 0;
@@ -204,27 +229,36 @@
 
 /* ─── 3D Floating Packaging Levitation ─── */
 @keyframes float-levitate-1 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotateX(15deg) rotateY(-18deg) rotateZ(2deg);
   }
+
   50% {
     transform: translateY(-22px) rotateX(20deg) rotateY(-12deg) rotateZ(-3deg);
   }
 }
 
 @keyframes float-levitate-2 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotateX(-12deg) rotateY(24deg) rotateZ(-4deg);
   }
+
   50% {
     transform: translateY(-28px) rotateX(-8deg) rotateY(18deg) rotateZ(3deg);
   }
 }
 
 @keyframes lid-levitate {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotateX(4deg);
   }
+
   50% {
     transform: translateY(-38px) rotateX(8deg) rotateZ(2deg);
   }
@@ -236,16 +270,20 @@
     transform: translate3d(0, 105vh, 0) rotate3d(1, 1, 0, 0deg) scale(0.75);
     opacity: 0;
   }
+
   12% {
     opacity: 0.95;
   }
+
   50% {
     transform: translate3d(60px, 50vh, 80px) rotate3d(1, 1.2, 0.5, 200deg) scale(1.1);
     opacity: 1;
   }
+
   88% {
     opacity: 0.95;
   }
+
   100% {
     transform: translate3d(-40px, -8vh, 40px) rotate3d(1, 1, 1, 380deg) scale(0.8);
     opacity: 0;
@@ -257,16 +295,20 @@
     transform: translate3d(0, 105vh, 0) rotate3d(0.8, 1, 0.3, 30deg) scale(0.7);
     opacity: 0;
   }
+
   15% {
     opacity: 0.9;
   }
+
   50% {
     transform: translate3d(-50px, 48vh, 60px) rotate3d(1, 0.8, 0.6, 220deg) scale(1);
     opacity: 1;
   }
+
   85% {
     opacity: 0.9;
   }
+
   100% {
     transform: translate3d(40px, -8vh, 20px) rotate3d(0.5, 1, 0.8, 410deg) scale(0.75);
     opacity: 0;
@@ -279,18 +321,22 @@
     transform: translate3d(0, 105vh, 0) rotate3d(1, 0.5, 0.8, 0deg) scale(0.7);
     opacity: 0;
   }
+
   15% {
     opacity: 1;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
   }
+
   50% {
     transform: translate3d(45px, 52vh, 50px) rotate3d(1, 1, 0.5, 280deg) scale(1.15);
     opacity: 1;
     filter: drop-shadow(0 0 14px rgba(52, 211, 153, 0.85));
   }
+
   85% {
     opacity: 0.95;
   }
+
   100% {
     transform: translate3d(-35px, -8vh, 10px) rotate3d(0.8, 1, 0.4, 560deg) scale(0.8);
     opacity: 0;
@@ -299,11 +345,14 @@
 
 /* ─── Photons & Glowing Sparkles ─── */
 @keyframes photon-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(0.6);
     opacity: 0.2;
     filter: drop-shadow(0 0 4px #34d399);
   }
+
   50% {
     transform: scale(1.4);
     opacity: 1;
@@ -315,19 +364,24 @@
   0% {
     transform: translateX(-2%) translateY(0) scaleY(1);
   }
+
   50% {
     transform: translateX(2%) translateY(-14px) scaleY(1.08);
   }
+
   100% {
     transform: translateX(-2%) translateY(0) scaleY(1);
   }
 }
 
 @keyframes pulse-transit {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(0.85);
     opacity: 0.45;
   }
+
   50% {
     transform: scale(1.6);
     opacity: 1;
@@ -335,7 +389,54 @@
   }
 }
 
+/* ─── Luxury Editorial Typography (Safira / Bodoni / Cinzel / Playfair) ─── */
+.font-bodoni {
+  font-family: var(--font-bodoni);
+}
 
+.font-safira {
+  font-family: var(--font-bodoni);
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
 
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
 
+.font-playfair {
+  font-family: var(--font-playfair);
+}
 
+/* ─── Infinite Marquee Ribbon ─── */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+/* ─── Luxury Metallic Text Shimmer ─── */
+@keyframes text-shimmer-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer-flow 5s ease-in-out infinite;
+}

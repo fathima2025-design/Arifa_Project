@@ -50,26 +50,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="py-12 lg:py-20 bg-slate-50 min-h-screen font-['Manrope'] text-slate-900 overflow-hidden relative">
-      {/* Ambient Floating Orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          x: [0, 40, 0],
-          y: [0, -30, 0],
-        }}
-        transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
-        className="absolute top-20 left-5 w-[450px] h-[450px] rounded-full bg-emerald-400/10 blur-3xl pointer-events-none -z-10"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.25, 1],
-          x: [0, -30, 0],
-          y: [0, 35, 0],
-        }}
-        transition={{ repeat: Infinity, duration: 14, ease: "easeInOut", delay: 1 }}
-        className="absolute top-[650px] right-5 w-[500px] h-[500px] rounded-full bg-blue-400/10 blur-3xl pointer-events-none -z-10"
-      />
+    <div className="py-12 lg:py-20 bg-slate-50 min-h-screen text-slate-900 overflow-hidden relative">
+      {/* Ambient Hardware-Accelerated Ambient Glows */}
+      <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-emerald-400/10 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-[600px] right-10 w-[450px] h-[450px] rounded-full bg-blue-400/10 blur-[120px] pointer-events-none -z-10" />
 
       <Container size="wide">
         {/* 1. Animated Hero & Factory Showcase */}
@@ -97,8 +81,11 @@ export default function AboutPage() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
               About{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-slate-900">
-                Arifa Pack
+              <span className="font-safira font-bold italic text-emerald-600 text-[1.12em] inline-block pr-1">
+                Arifa
+              </span>{" "}
+              <span className="text-slate-900">
+                Pack
               </span>
             </h1>
 
@@ -140,6 +127,8 @@ export default function AboutPage() {
                 alt="Arifa Pack 780+ Machine Manufacturing Plant in Ajman"
                 fill
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={85}
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
@@ -202,11 +191,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card3D
-                maxTilt={12}
-                depth={22}
-                className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all text-center sm:text-left h-full"
-              >
+              <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-emerald-400 transition-all duration-300 text-center sm:text-left h-full">
                 <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                   {stat.val}
                 </div>
@@ -214,7 +199,7 @@ export default function AboutPage() {
                   {stat.label}
                 </div>
                 <div className="text-[11px] text-slate-500 mt-0.5">{stat.sub}</div>
-              </Card3D>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -352,11 +337,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.12 }}
               >
-                <Card3D
-                  maxTilt={12}
-                  depth={20}
-                  className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-md shadow-slate-100 flex flex-col justify-between hover:border-emerald-300 transition-all h-full"
-                >
+                <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-md shadow-slate-100 flex flex-col justify-between hover:border-emerald-300 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full">
                   <div>
                     <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-extrabold text-xs mb-3 border border-emerald-200/60">
                       <Calendar className="w-3 h-3 text-emerald-600" />
@@ -367,7 +348,7 @@ export default function AboutPage() {
                       {item.desc}
                     </p>
                   </div>
-                </Card3D>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -396,11 +377,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card3D
-                  maxTilt={12}
-                  depth={20}
-                  className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md shadow-slate-100 flex flex-col justify-between hover:border-emerald-500/40 transition-all duration-300 h-full"
-                >
+                <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md shadow-slate-100 flex flex-col justify-between hover:border-emerald-500/40 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full">
                   <div>
                     <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 mb-4 shadow-xs">
                       <CheckCircle className="w-5 h-5 text-emerald-600" />
@@ -410,7 +387,7 @@ export default function AboutPage() {
                       {val.description}
                     </p>
                   </div>
-                </Card3D>
+                </div>
               </motion.div>
             ))}
           </div>

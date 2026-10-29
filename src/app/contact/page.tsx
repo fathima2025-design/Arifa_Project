@@ -64,7 +64,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-['Manrope'] text-slate-900 overflow-hidden relative">
+    <div className="min-h-screen bg-slate-50 text-slate-900 overflow-hidden relative">
       {/* Ambient Floating Background Orbs */}
       <motion.div
         animate={{

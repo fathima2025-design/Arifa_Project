@@ -39,7 +39,7 @@ export const MaterialComparator: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden font-['Manrope'] border-b border-white/5 bg-transparent text-white">
+    <section className="py-24 relative overflow-hidden border-b border-white/5 bg-transparent text-white">
       <Container size="wide" className="relative z-10">
         <div className="max-w-3xl mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">

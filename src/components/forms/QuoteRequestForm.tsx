@@ -118,7 +118,7 @@ export const QuoteRequestForm: React.FC<QuoteRequestFormProps> = ({
     "w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300/80 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-all";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 font-['Manrope']">
+    <form onSubmit={handleSubmit} className="space-y-4">
       {/* Product Selection */}
       <FormField label="Product" name="selectedProduct">
         <select

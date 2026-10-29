@@ -9,7 +9,7 @@ export const FloatingWhatsApp: React.FC = () => {
   return (
     <aside
       aria-label="Direct WhatsApp Support"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 font-['Manrope']"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

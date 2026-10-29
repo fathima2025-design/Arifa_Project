@@ -22,7 +22,7 @@ export const B2BEstimatorWidget: React.FC = () => {
   const container20ftPct = Math.min(100, Math.round((cartons / 600) * 100));
 
   return (
-    <section className="py-24 relative overflow-hidden font-['Manrope'] border-b border-white/5 bg-transparent text-white">
+    <section className="py-24 relative overflow-hidden border-b border-white/5 bg-transparent text-white">
       <Container size="wide" className="relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section Heading */}

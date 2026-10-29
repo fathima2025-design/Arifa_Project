@@ -26,7 +26,7 @@ export const CapabilitiesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden font-['Manrope'] border-b border-white/5 bg-transparent text-white">
+    <section className="py-24 relative overflow-hidden border-b border-white/5 bg-transparent text-white">
       <Container size="wide" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Manufacturing Narrative */}

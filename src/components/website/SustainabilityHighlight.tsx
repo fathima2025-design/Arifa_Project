@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 export const SustainabilityHighlight: React.FC = () => {
   return (
-    <section className="py-24 bg-transparent text-white relative overflow-hidden font-['Manrope']">
+    <section className="py-24 bg-transparent text-white relative overflow-hidden">
       <Container size="wide" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Narrative */}

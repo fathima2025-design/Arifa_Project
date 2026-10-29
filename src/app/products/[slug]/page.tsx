@@ -66,7 +66,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     .slice(0, 3);
 
   return (
-    <div className="py-10 lg:py-16 bg-transparent text-slate-900 min-h-screen font-['Manrope']">
+    <div className="py-10 lg:py-16 bg-transparent text-slate-900 min-h-screen">
       <Container size="wide">
         {/* Breadcrumb / Back Link */}
         <div className="mb-6 flex items-center justify-between">

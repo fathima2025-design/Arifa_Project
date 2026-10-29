@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full font-['Manrope']">
+    <header className="sticky top-0 z-40 w-full font-bodoni">
       {/* Top Announcement Bar (arifapack.com authentic contacts, login & brochure) */}
       <div className="bg-slate-100/95 backdrop-blur-md text-slate-700 text-xs py-2 border-b border-slate-200/90 hidden sm:block">
         <Container size="wide" className="flex items-center justify-end">
@@ -185,7 +185,7 @@ export const Header: React.FC = () => {
                     <Link
                       href={link.href}
                       className={cn(
-                        "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors",
+                        "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold tracking-wide transition-colors font-bodoni",
                         isActive
                           ? "text-emerald-600 bg-emerald-50 font-bold"
                           : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
@@ -215,7 +215,7 @@ export const Header: React.FC = () => {
                                   <Layers className="w-4 h-4" />
                                 </div>
                                 <div>
-                                  <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                                  <div className="text-xs font-bold text-slate-900 group-hover:text-emerald-600 transition-colors font-bodoni">
                                     {category.name}
                                   </div>
                                   <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
@@ -226,12 +226,12 @@ export const Header: React.FC = () => {
                             ))}
                           </div>
                           <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between px-2 text-xs">
-                            <span className="text-slate-500 font-medium">
+                            <span className="text-slate-500 font-medium font-bodoni">
                               ISO 9001 & Food Contact Certified
                             </span>
                             <Link
                               href="/products"
-                              className="text-emerald-600 hover:text-emerald-700 font-bold inline-flex items-center gap-1"
+                              className="text-emerald-600 hover:text-emerald-700 font-bold inline-flex items-center gap-1 font-bodoni"
                             >
                               Explore All Products
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -248,8 +248,9 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={true}
                   className={cn(
-                    "px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors",
+                    "px-3.5 py-2 rounded-lg text-sm font-semibold tracking-wide transition-colors font-bodoni",
                     isActive
                       ? "text-emerald-600 bg-emerald-50 font-bold"
                       : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
@@ -302,18 +303,19 @@ export const Header: React.FC = () => {
                     : pathname.startsWith(link.href);
 
                 return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={cn(
-                      "block px-4 py-2.5 rounded-lg text-sm font-bold transition-colors",
-                      isActive
-                        ? "text-emerald-600 bg-emerald-50"
-                        : "text-slate-800 hover:bg-slate-50"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      prefetch={true}
+                      className={cn(
+                        "block px-4 py-2.5 rounded-lg text-sm font-bold tracking-wide transition-colors font-bodoni",
+                        isActive
+                          ? "text-emerald-600 bg-emerald-50"
+                          : "text-slate-800 hover:bg-slate-50"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
                 );
               })}
 

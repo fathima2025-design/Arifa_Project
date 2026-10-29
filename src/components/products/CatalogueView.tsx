@@ -67,7 +67,7 @@ export const CatalogueView: React.FC = () => {
   };
 
   return (
-    <div className="py-16 min-h-screen font-['Manrope'] bg-transparent text-slate-900 relative">
+    <div className="py-16 min-h-screen bg-transparent text-slate-900 relative">
       <Container size="wide" className="relative z-10">
         {/* Page Title & Category Header */}
         <div className="mb-10 text-left">

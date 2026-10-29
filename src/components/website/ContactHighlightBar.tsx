@@ -9,7 +9,7 @@ import { Card3D } from "@/components/ui/Card3D";
 
 export const ContactHighlightBar: React.FC = () => {
   return (
-    <section className="bg-slate-950 text-white py-12 border-t border-slate-800 font-['Manrope']">
+    <section className="bg-slate-950 text-white py-12 border-t border-slate-800">
       <Container size="wide">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {/* 1. Phone Support */}

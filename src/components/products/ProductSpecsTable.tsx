@@ -10,7 +10,7 @@ export const ProductSpecsTable: React.FC<ProductSpecsTableProps> = ({ product })
   const { specs, dimensions } = product;
 
   return (
-    <div className="space-y-6 font-['Manrope']">
+    <div className="space-y-6">
       <div className="flex items-center justify-between pb-2 border-b border-slate-200">
         <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
           <Info className="w-4 h-4 text-emerald-600" />

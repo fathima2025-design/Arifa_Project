@@ -253,7 +253,7 @@ export const Packaging3DCanvas: React.FC<Packaging3DCanvasProps> = ({
       <Suspense fallback={<ModelFallback label="Loading 3D Visualizer..." className="h-full" />}>
         <Canvas
           camera={{ position: [0, 1.8, 3.8], fov: 45 }}
-          shadows
+          shadows={{ type: THREE.PCFShadowMap }}
           className="w-full h-full cursor-grab active:cursor-grabbing"
         >
           {/* Dynamic Orbiting Lighting & Studio Environment Reflections */}
